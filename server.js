@@ -33,7 +33,8 @@ app.set('view engine','ejs');
 app.use(cors());
 
 // Database Setup
-const client = new pg.Client(process.env.DATABASE_URL);
+const option = NODE_ENV == 'production'?  {connectionString: process.env.DATABASE_URL,ssl: { rejectUnauthorized: false}} : {connectionString: process.env.DATABASE_URL};
+const client = new pg.Client(option);
 
 // app routes here
 // -- WRITE YOUR ROUTES HERE --
