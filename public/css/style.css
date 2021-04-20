@@ -5,7 +5,17 @@
 body{
     background-color: rgb(112, 195, 216);
 }
-
+.logo{
+    width: 70px;
+}
+nav{
+    background-color: teal;
+}
+a{
+    text-decoration: none;
+    color: rgba(255, 255, 0, 0.808);
+    margin-left: 20px;
+}
 main{
     display: flex;
     flex-wrap: wrap;
