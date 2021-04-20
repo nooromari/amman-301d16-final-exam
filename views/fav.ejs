@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('layout/head')%>
+<body>
+    <%- include('layout/header')%>
+    <main>
+
+        <% data.forEach(item =>{ %>
+            <section class="<%= item.characterDirection %>">
+            <p><%= item.character %></p>
+            <p><%= item.quote %></p>
+            <img src="<%= item.image %>" alt="">
+            
+            <!-- <form action="/favorite-quotes" method="post">
+                <input type="hidden" name="character" value="<%= item.character %>">
+                <input type="hidden" name="quote" value="<%= item.quote %>">
+                <input type="hidden" name="image" value="<%= item.image %>">
+                <input type="hidden" name="characterDirection" value="<%= item.characterDirection %>">
+                <button type="submit">save to fav</button>
+            </form> -->
+            <form action="/favorite-quotes/<%= item.id %>" method="get">
+                <button type="submit">details</button>
+            </form>
+        </section>
+        <% })%>
+    </main>
+    
+</body>
+</html>
